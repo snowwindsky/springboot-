@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+成功了
+<!--th:text 将div里面的文本内容设置为-->
+<div th:id="${msg1}" th:text="${msg1}">这是显示欢迎信息</div>
+<hr/>
+<div th:text="${msg1}"></div>
+<div th:utext="${msg1}"></div>
+<hr/>
+<!--th:each每次遍历都会生成当前这个标签：3个h4-->
+<h4  th:text="${aaa}" th:each="aaa:${array1}"></h4>
+<hr/>
+<h4>
+    <span th:each="aaa:${array1}"> [[${aaa}]] </span>
+</h4>
+</body>
+</html>
