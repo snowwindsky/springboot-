@@ -2,8 +2,13 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.mybatis.example.BlogMapper">
-    <select id="selectBlog" resultType="Blog">
-        select * from Blog where id = #{id}
+<mapper namespace="com.sn.springboot.mapper.EmployeeMapper">
+
+    <select id="getEmpById" resultType="com.sn.springboot.bean.Employee">
+        SELECT * FROM employee WHERE id = #{id}
     </select>
+
+    <insert id="insertEmp" parameterType="com.sn.springboot.bean.Employee">
+        INSERT INTO employee(lastName,gender,email,d_id                                                                                             ) VALUES (#{lastName},#{gender},#{email},#{dId})
+    </insert>
 </mapper>
