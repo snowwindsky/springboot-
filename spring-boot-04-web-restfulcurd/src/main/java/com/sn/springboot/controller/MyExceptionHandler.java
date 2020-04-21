@@ -28,6 +28,7 @@ public class MyExceptionHandler {
         request.setAttribute("javax.servlet.error.status_code",500);
         map.put("code","user.notExist");
         map.put("message","用户出错啦");
+        map.put("exception",e.getClass().getName());
         request.setAttribute("exc",map);
         return "forward:/error";
     }

@@ -11,14 +11,17 @@ import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.*;
 
 //通过实现webMvcConfigurer接口拓展mvc功能
+//@EnableWebMvc
 @Configuration
 public class MyMvcConfig implements WebMvcConfigurer{
+
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         //浏览器发送/sn请求，也来到success
         registry.addViewController("/sn").setViewName("success");
     }
+
     @Bean
     public WebMvcConfigurer webMvcConfigurer(){
         WebMvcConfigurer adapter =new WebMvcConfigurer() {
@@ -34,9 +37,9 @@ public class MyMvcConfig implements WebMvcConfigurer{
             public void addInterceptors(InterceptorRegistry registry) {
 //              静态资源： *.css,*.js
 //              Spring Boot已经做好了静态资源映射
-//                registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
-//                        .excludePathPatterns("/login.html","/","/user/login",
-//                                "/asserts/**","/webjars/**");
+                registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
+                        .excludePathPatterns("/login.html","/","/user/login",
+                                "/asserts/**","/webjars/**");
             }
         };
         return adapter;

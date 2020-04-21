@@ -24,7 +24,7 @@ spring:
     initialization-mode: always
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
-  mapper-locations: classpath:mybatis/mapper/*.xml
+  mapper-locations: classpath:/mybatis/mapper/*.xml
 #    schema:
 #      - classpath:sql/department.sql
 #      - classpath:sql/employee.sql

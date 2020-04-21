@@ -42,6 +42,7 @@ public class MyServerConfig {
     public WebServerFactoryCustomizer<ConfigurableWebServerFactory> webServerFactoryWebServerFactoryCustomizer(){
         return new WebServerFactoryCustomizer<ConfigurableWebServerFactory>() {
             //定制嵌入式的servlet容器相关的规则
+
             @Override
             public void customize(ConfigurableWebServerFactory factory) {
                 factory.setPort(8083);

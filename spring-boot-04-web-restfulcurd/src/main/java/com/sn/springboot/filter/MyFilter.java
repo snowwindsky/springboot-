@@ -1,8 +1,5 @@
 package com.sn.springboot.filter;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-import org.springframework.stereotype.Component;
-
 import javax.servlet.*;
 import java.io.IOException;
 

@@ -17,7 +17,7 @@ import java.util.Collection;
 import java.util.Date;
 
 @Controller
-public class EmployeeController {
+public class  EmployeeController {
 
     @Autowired
     EmployeeDao employeeDao;
@@ -31,7 +31,6 @@ public class EmployeeController {
 //        dateFormat.setLenient(false);
 //        binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
 //    }
-
 
 //    查询所有员工返回列表页面
     @GetMapping("/emps")
